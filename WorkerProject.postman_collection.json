@@ -1,0 +1,1656 @@
+{
+	"info": {
+		"_postman_id": "b30626b0-f514-4c86-82fb-dce521fd8533",
+		"name": "WorkerProject",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more scripts in \"Tests\" to verify if the API works as expected and execute flows.\n    \n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)  \n[Writing scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26053342"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}auth/admin/register?name=karim&email=karim2@admin.com&password=karim12345",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"admin",
+										"register"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "karim"
+										},
+										{
+											"key": "email",
+											"value": "karim2@admin.com"
+										},
+										{
+											"key": "password",
+											"value": "karim12345"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTc1NjMxODAsImV4cCI6MTY5NzU2Njc4MCwibmJmIjoxNjk3NTYzMTgwLCJqdGkiOiJ3bU8zS0Nnd1J5QWZTOXBhIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.SW-1QwaQqcloBore_yPM-6XogIEfASxtVMhNgpB2QPE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}auth/admin/logout",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "karim2@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "karim12345",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}auth/admin/login",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "worker",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "karim",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "lbkarim23@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "worker12345",
+											"type": "text"
+										},
+										{
+											"key": "location",
+											"value": "LB",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/myName/Pictures/Saved Pictures/form1.jpg"
+										},
+										{
+											"key": "phone",
+											"value": "81/042/408",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}auth/worker/register",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"worker",
+										"register"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "karim",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "karim@worker.com",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "karim12345",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "81042408",
+											"disabled": true
+										},
+										{
+											"key": "photo",
+											"value": "image.jpg",
+											"disabled": true
+										},
+										{
+											"key": "location",
+											"value": "lebanon",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4NzM2Nzc3LCJleHAiOjE2OTg3NDAzNzcsIm5iZiI6MTY5ODczNjc3NywianRpIjoiTnN2dVdybmd6dkpEOVR2TyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.UwUVsL5pyZYgl3TY_CjXbmxgN5ipbloJ6aTOalrtUIY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "lbkarim255@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "worker12345",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}auth/worker/login",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"worker",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk3MjA4MzQ2LCJleHAiOjE2OTcyMTE5NDYsIm5iZiI6MTY5NzIwODM0NiwianRpIjoic2dLUWxFajJIWG9ZNHpKMCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.UE22IeHaVrSgD-y8cZ0EZWA7Qkm7btkFHeRIcoAQZYw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}auth/worker/logout",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"worker",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "af91f4db375d4f5ca7fa3e4659408e74",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}auth/worker/verify/c681ddba8ed84a76cf6562599e05ebbe",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"worker",
+										"verify",
+										"c681ddba8ed84a76cf6562599e05ebbe"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "client",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "worker",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "worker3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "worker12345",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/myName/Pictures/Saved Pictures/form1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}auth/client/register",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"client",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTcxMjM1ODcsImV4cCI6MTY5NzEyNzE4NywibmJmIjoxNjk3MTIzNTg3LCJqdGkiOiJUajBxc2lYZXFiMHVrSm1mIiwic3ViIjoiMiIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.0yRz0f5L-CmvpE-khLY1PmNQfA033pzAV4saniph9lg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "worker3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "worker12345",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}auth/client/login",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"client",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjk3MTM5NjAwLCJleHAiOjE2OTcxNDMyMDAsIm5iZiI6MTY5NzEzOTYwMCwianRpIjoiZ2NSZllkZUY3THpSaXJ1WCIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.QpSemtUY0zjUkDDiKoJ1mw-h3cxFheTimsF89I0jllc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}auth/client/logout",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"client",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "dashboard",
+			"item": [
+				{
+					"name": "admins",
+					"item": [
+						{
+							"name": "adminNotifications",
+							"item": [
+								{
+									"name": "getAdminNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgzMjEyMzksImV4cCI6MTY5ODMyNDgzOSwibmJmIjoxNjk4MzIxMjM5LCJqdGkiOiJlSlJ1SjhwSDF1Z0VyR0VMIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ._DAA-ramBdMBRy89e_hZNl2FLe0Hs2zLLyOwNKbjKa4",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/all",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "unreadNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgyNTI4NjQsImV4cCI6MTY5ODI1NjQ2NCwibmJmIjoxNjk4MjUyODY0LCJqdGkiOiJRN0xjcUlWNVlQQnNIU3Y2Iiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.js_dBqJWx12-p79ODxEvzhv3Funr2R4kG5pxFC956ts",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/unreadNotifications",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"unreadNotifications"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "markAllAsRead",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgyMTg1OTUsImV4cCI6MTY5ODIyMjE5NSwibmJmIjoxNjk4MjE4NTk1LCJqdGkiOiJiRUFGN1dFblFFZHNkNEdOIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.x3aWXqEhjDoIN3L5tlcf2pKMgYkQHn4m_Cnz85NOyrY",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/markAllAsRead",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"markAllAsRead"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "markAsReadById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgyNTI4NjQsImV4cCI6MTY5ODI1NjQ2NCwibmJmIjoxNjk4MjUyODY0LCJqdGkiOiJRN0xjcUlWNVlQQnNIU3Y2Iiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.js_dBqJWx12-p79ODxEvzhv3Funr2R4kG5pxFC956ts",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/markAsReadById/6a2e317b-cb19-41f1-850e-627c440953e4",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"markAsReadById",
+												"6a2e317b-cb19-41f1-850e-627c440953e4"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteAllNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgyMjI0NTMsImV4cCI6MTY5ODIyNjA1MywibmJmIjoxNjk4MjIyNDUzLCJqdGkiOiJldmswMU84SmVNd1hzS0NuIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.PgLxw3EXfX2ebUrV2blKQnPHN5ytRG10wXdpZEfvAw4",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/deleteAll",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"deleteAll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgyMjI0NTMsImV4cCI6MTY5ODIyNjA1MywibmJmIjoxNjk4MjIyNDUzLCJqdGkiOiJldmswMU84SmVNd1hzS0NuIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.PgLxw3EXfX2ebUrV2blKQnPHN5ytRG10wXdpZEfvAw4",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/deleteById/8cf8f3ca-5e5c-4ca2-90c0-89b5643d2800",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"deleteById",
+												"8cf8f3ca-5e5c-4ca2-90c0-89b5643d2800"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ChangeStatusByAdmins",
+							"item": [
+								{
+									"name": "changeStatus",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgzOTE1NzYsImV4cCI6MTY5ODM5NTE3NiwibmJmIjoxNjk4MzkxNTc2LCJqdGkiOiJFR1VLVmM1UklvZGRuamNQIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.CHEZaT8hvWoDY_sWjDGUSFt3ZR61Jri_O4qcPpKfX5s",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "status",
+													"value": "approved",
+													"type": "text"
+												},
+												{
+													"key": "post_id",
+													"value": "17",
+													"type": "text"
+												},
+												{
+													"key": "rejected_reason",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}dashboard/admin/post/changeStatus",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"post",
+												"changeStatus"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "workers",
+					"item": [
+						{
+							"name": "workerNotifications",
+							"item": [
+								{
+									"name": "getWorkerNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/worker/notification/all",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"worker",
+												"notification",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "unreadNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/unreadNotifications",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"unreadNotifications"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "markAllAsRead",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/markAllAsRead",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"markAllAsRead"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "markAsReadById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/markAsReadById/59c5b17a-a7ea-43a5-a05f-1e160e10923e",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"markAsReadById",
+												"59c5b17a-a7ea-43a5-a05f-1e160e10923e"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteAllNotifications",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/deleteAll",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"deleteAll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4MjUzODY2LCJleHAiOjE2OTgyNTc0NjYsIm5iZiI6MTY5ODI1Mzg2NiwianRpIjoiV3hSN1UyenFPZUwxbEw5MyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.bIOAOlqPwY4yufs42RmbDGZ_fu7poswcVNOM8rKCLzU",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/admin/notification/deleteById/8cf8f3ca-5e5c-4ca2-90c0-89b5643d2800",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"admin",
+												"notification",
+												"deleteById",
+												"8cf8f3ca-5e5c-4ca2-90c0-89b5643d2800"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "workerProfile",
+							"item": [
+								{
+									"name": "workerProfile",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/worker/profile",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"worker",
+												"profile"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "editProfile",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4NzY2MjI1LCJleHAiOjE2OTg3Njk4MjUsIm5iZiI6MTY5ODc2NjIyNSwianRpIjoiNjVaMExmYXNSWjVXT2NHZSIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.yeln-6OXD0fEKuoWyGS7PR7US6Qgvzy-XDOOLV3Z6Ao",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/worker/edit",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"worker",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "updateWorker",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4ODMzNjA2LCJleHAiOjE2OTg4MzcyMDYsIm5iZiI6MTY5ODgzMzYwNiwianRpIjoiaDROakxzeDB3eFdqcDlqeCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.VkVAznJXE54-ft8_JZkyHv5qKV27qu85VKHmOOFcb0A",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "rami",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "lbkarim255@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "76325150",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "/C:/Users/myName/Pictures/Saved Pictures/form.jpg"
+												},
+												{
+													"key": "location",
+													"value": "lebanon",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "worker12345",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}dashboard/worker/update",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"worker",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteWorkerPosts",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4ODQxNDc1LCJleHAiOjE2OTg4NDUwNzUsIm5iZiI6MTY5ODg0MTQ3NSwianRpIjoiTzhrQklUbndmUjZvWEdZcCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.nt7A6LeqLj2Fhjv2SM6iwPvJ_A3YLHKMrj6actWNuxA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/worker/deletePosts",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"worker",
+												"deletePosts"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "posts",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "c",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "rejected_reason",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "approved",
+											"type": "text"
+										},
+										{
+											"key": "photos[]",
+											"type": "file",
+											"src": [
+												"/C:/Users/myName/Pictures/Saved Pictures/form.jpg",
+												"/C:/Users/myName/Pictures/Saved Pictures/form1.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/worker/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"worker",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "showPosts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/show",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"show"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPostById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/getById/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"getById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approvedPosts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/approved?filter[content]=c&filter[price]=9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"approved"
+									],
+									"query": [
+										{
+											"key": "filter[content]",
+											"value": "c"
+										},
+										{
+											"key": "filter[price]",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "filterOfApproved",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/filterOfApproved?filter[content]=c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"filterOfApproved"
+									],
+									"query": [
+										{
+											"key": "filter[content]",
+											"value": "c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "filterApprovedByAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjk4NzM2Nzc3LCJleHAiOjE2OTg3NDAzNzcsIm5iZiI6MTY5ODczNjc3NywianRpIjoiTnN2dVdybmd6dkpEOVR2TyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.UwUVsL5pyZYgl3TY_CjXbmxgN5ipbloJ6aTOalrtUIY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/dashboard/post/filterApprovedByAll?filter[item]=ka",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dashboard",
+										"post",
+										"filterApprovedByAll"
+									],
+									"query": [
+										{
+											"key": "filter[price]",
+											"value": "9",
+											"disabled": true
+										},
+										{
+											"key": "filter[content]",
+											"value": "c",
+											"disabled": true
+										},
+										{
+											"key": "filter[worker.name]",
+											"value": "karim",
+											"disabled": true
+										},
+										{
+											"key": "filter[item]",
+											"value": "ka"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "worker",
+							"item": [
+								{
+									"name": "PendingOrdersOfworker",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjY5MzM3LCJleHAiOjE3MDMyNzI5MzcsIm5iZiI6MTcwMzI2OTMzNywianRpIjoiYW9QSVVvTk9IQ2wxNjlsSiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.g2T1N5IEooEYENft3yd414vKg6O6lknSIvHqPczRDbg",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/order/worker/workerOrders",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"order",
+												"worker",
+												"workerOrders"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjcyOTU3LCJleHAiOjE3MDMyNzY1NTcsIm5iZiI6MTcwMzI3Mjk1NywianRpIjoiTDRoNzBNVUliUFJxUWh2YyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.tfdLr024EyXqBl-56hKaMhEXRMTY8rQrdFBh4R1SAvM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}dashboard/order/worker/getById/3",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"order",
+												"worker",
+												"getById",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update Order",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjcyOTU3LCJleHAiOjE3MDMyNzY1NTcsIm5iZiI6MTcwMzI3Mjk1NywianRpIjoiTDRoNzBNVUliUFJxUWh2YyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.tfdLr024EyXqBl-56hKaMhEXRMTY8rQrdFBh4R1SAvM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "approved",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}dashboard/order/worker/update/3",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"order",
+												"worker",
+												"update",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete order",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNzAzMjcyOTU3LCJleHAiOjE3MDMyNzY1NTcsIm5iZiI6MTcwMzI3Mjk1NywianRpIjoiTDRoNzBNVUliUFJxUWh2YyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.tfdLr024EyXqBl-56hKaMhEXRMTY8rQrdFBh4R1SAvM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "approved",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}dashboard/order/worker/delete",
+											"host": [
+												"{{url}}dashboard"
+											],
+											"path": [
+												"order",
+												"worker",
+												"delete"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "WebSite",
+			"item": [
+				{
+					"name": "client",
+					"item": [
+						{
+							"name": "storeOrder",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNzAzMjczMzAwLCJleHAiOjE3MDMyNzY5MDAsIm5iZiI6MTcwMzI3MzMwMCwianRpIjoiR0d2b0ZNNU11RUVqeHgycCIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.t-s49jAa-MOdjHyXuJAse27zjZ294dKBNc97L882-3Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "post_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "approved",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}webSite/order/client/addOrder",
+									"host": [
+										"{{url}}webSite"
+									],
+									"path": [
+										"order",
+										"client",
+										"addOrder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNzAzMjczMzAwLCJleHAiOjE3MDMyNzY5MDAsIm5iZiI6MTcwMzI3MzMwMCwianRpIjoiR0d2b0ZNNU11RUVqeHgycCIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.t-s49jAa-MOdjHyXuJAse27zjZ294dKBNc97L882-3Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "approved",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}webSite/order/client/delete/1",
+									"host": [
+										"{{url}}webSite"
+									],
+									"path": [
+										"order",
+										"client",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "reviews",
+					"item": [
+						{
+							"name": "reviewByClient",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjk4NzQ4MTI5LCJleHAiOjE2OTg3NTE3MjksIm5iZiI6MTY5ODc0ODEyOSwianRpIjoiTWFJU0l2aE5UZE5xenBPWSIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.aU7h7YLzD7bLihMywBLAJ56uiNvIo5nKBR1OriXHxOE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "post_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "rate",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "comment",
+											"value": "it  is so good post",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}dashboard/review",
+									"host": [
+										"{{url}}dashboard"
+									],
+									"path": [
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rateOfPost",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}dashboard/review/post/1",
+									"host": [
+										"{{url}}dashboard"
+									],
+									"path": [
+										"review",
+										"post",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api/",
+			"type": "string"
+		}
+	]
+}
