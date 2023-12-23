@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\worker\WorkerNotificationController;
 use App\Http\Controllers\Auth\{AdminController, WorkerController, ClientController};
 use App\Http\Controllers\Dashboard\admin\{PostStatusController, AdminNotificationController};
 use App\Http\Controllers\WebSite\Order\OrderController;
+use App\Http\Controllers\WebSite\Post\PostController as PostPostController;
 
 /************   Auth Routes  ************/
 
@@ -132,6 +133,12 @@ Route::prefix('webSite/')->group(function () {
                 Route::post('/addOrder', 'addOrder')->middleware('auth:client');
                 Route::delete('/delete/{id}', 'delete')->middleware('auth:client');
             });
+        });
+    });
+    // posts
+    Route::prefix('/post')->group(function () {
+        Route::controller(PostPostController::class)->group(function () {
+            Route::get('/posts', 'index');
         });
     });
 });

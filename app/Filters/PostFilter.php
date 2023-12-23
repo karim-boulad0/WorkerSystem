@@ -2,6 +2,7 @@
 
 namespace App\Filters;
 
+use App\Models\Post;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use Illuminate\Database\Eloquent\Builder;

@@ -617,7 +617,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2OTgzOTE1NzYsImV4cCI6MTY5ODM5NTE3NiwibmJmIjoxNjk4MzkxNTc2LCJqdGkiOiJFR1VLVmM1UklvZGRuamNQIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.CHEZaT8hvWoDY_sWjDGUSFt3ZR61Jri_O4qcPpKfX5s",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE3MDMzMDM2ODQsImV4cCI6MTcwMzMwNzI4NCwibmJmIjoxNzAzMzAzNjg0LCJqdGkiOiJnUWxqR3VqY3g2UHEwc2lMIiwic3ViIjoiMSIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.e1mVNcFdYvvHqfHt1HhWx_rqCbsbK0Wsnr6doKwR3Dk",
 													"type": "string"
 												}
 											]
@@ -634,7 +634,7 @@
 												},
 												{
 													"key": "post_id",
-													"value": "17",
+													"value": "1",
 													"type": "text"
 												},
 												{
@@ -1430,14 +1430,15 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}dashboard/order/worker/delete",
+											"raw": "{{url}}dashboard/order/worker/delete/1",
 											"host": [
 												"{{url}}dashboard"
 											],
 											"path": [
 												"order",
 												"worker",
-												"delete"
+												"delete",
+												"1"
 											]
 										}
 									},
@@ -1453,7 +1454,7 @@
 			"name": "WebSite",
 			"item": [
 				{
-					"name": "client",
+					"name": "order",
 					"item": [
 						{
 							"name": "storeOrder",
@@ -1591,9 +1592,9 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}dashboard/review",
+									"raw": "{{url}}webSite/review",
 									"host": [
-										"{{url}}dashboard"
+										"{{url}}webSite"
 									],
 									"path": [
 										"review"
@@ -1608,14 +1609,43 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}dashboard/review/post/1",
+									"raw": "{{url}}webSite/review/post/1",
 									"host": [
-										"{{url}}dashboard"
+										"{{url}}webSite"
 									],
 									"path": [
 										"review",
 										"post",
 										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "posts",
+					"item": [
+						{
+							"name": "get approved  posts using filters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}webSite/post/posts?filter[item]=rami",
+									"host": [
+										"{{url}}webSite"
+									],
+									"path": [
+										"post",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "filter[item]",
+											"value": "rami"
+										}
 									]
 								}
 							},
